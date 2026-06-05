@@ -1,0 +1,310 @@
+// ==UserScript==
+// @name         NTE辅助网站
+// @namespace    http://tampermonkey.net/
+// @version      3.0
+// @description  NTE辅助网站汉化
+// @author       User
+// @match        https://nte.stardb.gg/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // 配置区分两个规则字典
+    // 1. 精准全匹配：文本格式化后完全一模一样才替换整条
+    const fullMatchDict = {
+
+"Log in to track progress":"登录以追踪进度",
+"Task progress and stamina tracking are account-only now.":"计划表进度和体力追踪仅限登录用户使用。",
+"Log In":"登录",
+"Signed in with StarDB":"用StarDB账户登录",
+"Account Settings":"账户设置",
+"Log out":"退出登录",
+"Global Preferences":"全局偏好",
+"Choose the default region used for reset-based features\n\t\t\t\t\tacross the site.":"更改网站计划表刷新时间所基于的游戏区服。",
+"Reset Region":"区服设置",
+"Asia (5 AM GMT+8)":"亚服(早晨5点 GMT+8)",
+"Europe (5 AM GMT+2)":"欧服(早晨5点 GMT+2)",
+"America (5 AM GMT-4)":"美服(早晨5点 GMT-4)",
+"Legacy Browser Progress":"浏览器旧进度",
+"Merge older progress from this browser into your account\n\t\t\t\t\twithout replacing account settings.":"将此浏览器中的旧进度合并到您的帐户中，但不替换账户设置。",
+"Clear legacy browser progress after a successful merge":"合并成功后清除浏览器旧进度",
+"Merge legacy browser progress":"合并浏览器旧进度",
+"Account JSON":"账户JSON",
+"Back up your account progress or restore it from a JSON\n\t\t\t\t\tfile.":"备份你的账户进度或从JSON文件恢复。",
+"Export account JSON":"导出账户JSON",
+"Import account JSON":"导入账户JSON",
+"Danger Zone":"危险区域",
+"Permanently wipe all progress and synced settings stored on\n\t\t\t\t\tthis account.":"永久删除此帐户上存储的所有进度和同步设置。",
+"Reset account progress":"删除账户进度",
+"Saved account preferences.":"账户偏好已保存。",
+"Tasks":"计划表",
+"Quests":"任务",
+"Achievements":"成就",
+"Tools":"工具",
+"Map":"地图",
+"Task Info":"计划表详情",
+"No description has been added yet.":"尚未添加任何描述。",
+"Move cursor over map":"移动鼠标到地图上",
+"Middle-click to copy":"鼠标滚轮键复制",
+"Copied":"已复制",
+"Character Pixels":"本性像素",
+"Character Pixels cap":"本性像素上限",
+"City Stamina":"都市活力",
+"City Stamina cap":"都市活力上限",
+"Battle Pass Daily Tasks":"猎人补给(通行证)每日任务",
+"Daily Activity":"每日活跃度",
+"Illegal Activities / City Incidents":"城市违规行径",
+"Detention Facility Item Pickups":"拘留所物资拾取",
+"Nacupeda's Pool":"纳库佩达之池",
+"Grants a random amount of [Mhm! Coin] via first dialogue option.\nUse 100x [Mhm! Coin] to buy [Your Happiness is Priceless] S-Rank Arc in Mall -> Arc Shop -> Arc Exchange.":"选择第一个选项获得随机数量的[嗯！硬币]。|使用100个[嗯！硬币]可以购买[千金难买你开心]S级弧盘，在商城->弧盘商店->弧盘兑换。",
+"Witch's House Fortune":"魔女之家",
+"[Bond] 10x Affection Gift":"[羁遇]10次赠送礼物",
+"[Bond] 3x Memory Theater Encounter":"[羁遇]3次回忆映厅遭遇",
+"50 Affection":"50点好感度",
+"[Bond] 1x Daily Date":"[羁遇]1次每日约会",
+"200 Affection":"200点好感度",
+"[Bond] Yuanmu Hill - Fortune Shades Wish":"[羁遇]愿木坡祈福",
+"Completion":"显示完成",
+"All":"全部",
+"Hidden":"显示隐藏",
+"Display":"显示",
+"Compact":"简略",
+"Regular":"完整",
+"Not Hidden":"显示未隐藏",
+"Completed":"显示已完成",
+"Incomplete":"显示未完成",
+"Recurring Annulith":"循环环石",
+"One-time Annulith":"一次性环石",
+"Achievement":"成就",
+"Bond":"羁遇",
+"Anomaly Furniture":"异象家具",
+"[Anomaly Furniture] City Delivery":"[异象家具]同城派送",
+"Required to upgrade [Anomaly Furniture] Old Mailbox":"可以升级[异象家具]老旧邮箱",
+"[Anomaly Furniture] Compressed Boom Boom Cloud Claim":"[异象家具]绵绵[绒绒棉花]收集",
+"[Anomaly Furniture] Hamster Ball Claim":"[异象家具]仓鼠球收集",
+"[Anomaly Furniture] Damaged Crate Claim":"[异象家具]木箱收集",
+"Chiz Basic Attack Fons Cap":"小吱普通攻击方斯上限",
+"Daily Cap: 40,000 Fons\nTotal Cap: 250,000 Fons (base) | 500,000 Fons (Tycoon Level 25)":"每日上限:40,000方斯|总上限:250,000方斯(初始)|500,000方斯(大亨等级25)",
+"Collect/Restock Cafe":"收集/补货一咖舍",
+"Rob NPCs | 4x Briefcase, 4x Wallet, 4x Lunch Bag":"抢劫NPC|4个通勤公文包，4个遗失的钱包，4个速食早餐袋",
+"Overworld enemies":"大世界敌人",
+"[Fish Market] Daily Refresh":"[渔获市场]每日收购",
+"Taygedo's Shed":"塔吉多的仓库",
+"Battle Pass Weekly XP Cap":"猎人补给(通行证)历练值每周上限",
+"Edgar Bond 10 - Weekly Collectible":"埃德嘉羁遇10级-读后感",
+"[Anomaly Furniture] Blind Mammon - Realm of Greed Fons":"[异象家具]玛门-贪世宝库方斯",
+"[Anomaly Furniture] Old Mailbox - Special City Commission":"[异象家具]老旧邮箱-特殊同城派送",
+"[Anomaly Furniture] Ebisu Auction House":"[异象家具]惠比寿拍卖行",
+"Items / Materials":"道具/材料",
+"Fons":"方斯",
+"[Fishing Tackle Shop] 3x Universal Bait":"[渔具商店]3个万能鱼饵",
+"10x Small Safe (15k Fons)":"10个小保险箱(1.5万方斯)",
+"Anomaly Pilgrimage (Weekly Boss) x3":"异象巡礼(周Boss)3次",
+"Take Without Permission (Stealing from Shops around Hethereau)":"直接拿走商店道具(商店偷窃)",
+"Shop Stocks":"商店库存刷新",
+"Pink Paws Heist":"粉爪大劫案",
+"Lost Exchange":"迷迭兑换",
+"Mall -> Fair Exchange -> Lost Exchange\nRequires [Lost Piece] Currency from Scarborough Fair":"商城->集市兑换->迷迭兑换|需要斯卡布罗集市获得的[迷迭棋子]货币",
+"Otherworld Salvage Station (Beyond the Rails Shop)":"异境回收站(轨外之境商店)",
+"Mall -> Mode Shop -> Otherworld Salvage Station\nRequires [Train Log] Currency from Beyond the Rails":"商城->玩法商店->异境回收站|需要轨外之境获得的[行车日志]货币",
+"[Fishing Tackle Shop] 100x Beetle Coin":"[渔具商店]100次甲壳币兑换",
+"Beyond the Rails":"轨外之境",
+"Hunter Exchange":"猎人交易所",
+"Battle Pass":"猎人补给(通行证)",
+"Online Mode Racing: Ace Driver":"车辆赛事在线对战：S1赛季",
+"Add Task":"添加计划",
+"Save":"保存",
+"Cancel":"取消",
+"Delete":"删除",
+"Task type":"计划类型",
+"Normal":"普通",
+"Map marker":"地图标记",
+"Description":"描述",
+"Icon":"图标",
+"Reset Time":"重置时间",
+"None":"无",
+"Daily":"每日",
+"Weekly":"每周",
+"Biweekly":"每两周",
+"Monthly":"每月",
+"Version End":"版本结束",
+"Custom":"自定义",
+"Praise Jam":"过奖果酱",
+"Bagel - Praise Jam Calculator":"呗果-过奖果酱计算器",
+"Post Stats":"帖子数据",
+"Views":"浏览量",
+"Likes":"点赞",
+"Followers":"粉丝",
+"Comments":"评论",
+"Saves":"收藏",
+"Post Stats - Score Brackets":"帖子数据-分数阶梯",
+"Reset":"重置",
+"Interactions":"社交互动",
+"Viewed":"查看他人帖子",
+"Liked":"点赞他人帖子",
+"Commented":"评论他人帖子",
+"Summary":"激励计划",
+"Post Stats Praise Jam":"帖子数据过奖果酱",
+"Post Stats Score":"帖子数据分数",
+"Interactions Praise Jam":"社交互动过奖果酱",
+"Total Praise Jam":"总计过奖果酱",
+"ReroRero Phone Booth":"ReroRero电话亭",
+"Wertheimer Tower":"维特海默塔",
+"Oracle Stone":"谕石",
+"Version":"游戏版本",
+"Episodes":"正篇",
+"Spinoffs":"番外",
+"Guide":"引导",
+"Side":"支线",
+"Exploration":"探索",
+"Zero Hour Chronicles":"零点纪事",
+"Battle":"战斗",
+"8-Track Background Noise":"8-Track底噪",
+"Bopp in a Boxx":"盒式波普",
+"Interest":"趣味",
+"Single Frame Funk":"单帧放克",
+"Pixel Vaporwave":"像素蒸汽波",
+"Develop":"养成",
+"Distorted Ferrite":"失真铁氧体",
+"Gameplay":"玩法",
+"Gravity Type IV":"引力Type IV",
+"City":"城市",
+"A/B Flip/Side":"回转AB面",
+"Hide Collected":"隐藏已收集点位",
+"Mark Uncollected":"标记此点位未收集",
+"Mark All Collected":"标记全部点位已收集",
+"Mark Collected":"标记此点位已收集",
+"Mark All Uncollected":"标记全部点位未收集",
+"Copy Link":"复制点位链接",
+"Filters":"筛选",
+"Progress":"进度",
+"Info":"详情",
+"Collectable":"可收集总数",
+"District":"区域",
+"Hethereau":"海特洛",
+"Bridge Crossings":"桥间地",
+"Unheard Shores":"未闻浦",
+"Illusion Town":"绘空町",
+"Miguel District":"米格尔区",
+"New Herland":"新赫兰德区",
+"All districts":"全部区域",
+"No districts":"无区域",
+"2 districts":"2个区域",
+"3 districts":"3个区域",
+"4 districts":"4个区域",
+"5 districts":"5个区域",
+"6 districts":"6个区域",
+"7 districts":"7个区域",
+"Wanderer's Journal":"游记",
+"Map Finds":"大世界探索",
+"Enemies":"敌人",
+"Anomaly Zone":"异象空间",
+"Detention Escapes":"拘留所越狱",
+"Side Quest":"支线",
+"Check-In":"打卡",
+"Haunted Vending Machine":"贩售机附电灵",
+"Collected":"已收集",
+"Reset Progress":"重置进度",
+"Export Progress":"导出进度",
+"Import Progress":"导入进度",
+"No marker selected":"没有已选择的点位",
+"Lost Wallet":"遗失的钱包",
+"Lost Locker Key":"储物柜钥匙",
+"Magician's Gift":"魔术师的馈赠",
+"Chameleon Package":"避役的包裹",
+"Big Safe":"大保险箱",
+"City Crimes":"城市违规行径",
+"Bopp":"波普",
+"Cardboard Castle":"瓦楞城堡",
+"Cursed Blade":"妖刀",
+"Decomposer":"分解者",
+"Dream Spawn":"流梦种",
+"Empty Shell":"空铠甲",
+"Eternal Lamp":"长明灯",
+"Feather Puppet":"羽偶",
+"Fluffy":"棉绒绒",
+"Ghostly Kite":"诡面筝",
+"Haunted Record Player":"唱片机附电灵",
+"Huggy Vines":"抱抱藤",
+"Leech Spawn":"凭依种",
+"Lost Spawn":"迷失种",
+"Noros":"诺诺斯",
+"Octowpus":"拖车艄",
+"Paper Squadron":"纸翼战队",
+"Pouch Mosquito":"包包蚊",
+"Rain-sweeping Maid":"扫晴娘",
+"Rainman":"雨人",
+"Saddy Teddy":"伤心英熊",
+"Skyfish Banner":"洄天鱼幡",
+"The Vishnus":"无明众",
+"Whisper Spawn":"低语种",
+"Wind Spawn":"风洞种"
+    };
+    // 2. 局部包含匹配：原文里只要包含key，就把key片段替换成value
+    const partMatchDict = {
+        "Hidden": "已隐藏",
+        "Full ": "全部恢复时间 ",
+        "Next ": "下次恢复时间 ",
+        "Reset ": "重置时间 "
+    };
+
+    const fullKeys = Object.keys(fullMatchDict);
+    const partKeys = Object.keys(partMatchDict);
+
+    // 统一换行+去首尾空格
+    function formatStr(str) {
+        return str.replace(/\r?\n/g, '\n').trim();
+    }
+
+    // 文本替换逻辑：先全匹配、再局部替换
+    function replaceText(text) {
+        let fmt = formatStr(text);
+        // 优先全词整段替换
+        if(fullKeys.includes(fmt)){
+            return fullMatchDict[fmt];
+        }
+        // 再循环局部关键词替换
+        let res = text;
+        partKeys.forEach(key=>{
+            // 全局正则替换，防止只替换第一个
+            const reg = new RegExp(key,"g");
+            res = res.replace(reg, partMatchDict[key]);
+        })
+        // 时间格式转换核心
+        res = res.replace(/(\d+)d/g,"$1天");
+        res = res.replace(/(\d+)h/g,"$1小时");
+        res = res.replace(/(\d+)m/g,"$1分钟");
+        return res;
+    }
+
+    // 递归遍历DOM节点
+    function replaceFull(node) {
+        if (node.nodeType === 3) {
+            const newTxt = replaceText(node.textContent);
+            if(newTxt !== node.textContent){
+                node.textContent = newTxt;
+            }
+            return;
+        }
+        const skip = ['SCRIPT','STYLE','IFRAME','NOSCRIPT','CODE','PRE'];
+        if(skip.includes(node.tagName)) return;
+        [...node.childNodes].forEach(replaceFull);
+    }
+
+    // 初始化执行
+    setTimeout(()=>replaceFull(document.body),50);
+
+    // DOM变动监听
+    const observer = new MutationObserver((mutations)=>{
+        mutations.forEach(item=>{
+            [...item.addedNodes].forEach(replaceFull);
+        })
+    });
+    observer.observe(document.body, {childList:true, subtree:true, characterData:true});
+
+    // 兜底定时刷新
+    setInterval(()=>replaceFull(document.body),600);
+
+})();
