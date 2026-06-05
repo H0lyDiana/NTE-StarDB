@@ -240,7 +240,10 @@
 "Skyfish Banner":"洄天鱼幡",
 "The Vishnus":"无明众",
 "Whisper Spawn":"低语种",
-"Wind Spawn":"风洞种"
+"Wind Spawn":"风洞种",
+"Lv1 Safes":"1级保险箱",
+"Lv2 Safes":"2级保险箱",
+
     };
     // 2. 局部包含匹配：原文里只要包含key，就把key片段替换成value
     const partMatchDict = {
