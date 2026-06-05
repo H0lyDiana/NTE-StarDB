@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         NTE StarDB Localization
 // @namespace    http://tampermonkey.net/
-// @version      3.0
+// @version      3.1
 // @description  NTE辅助网站汉化
 // @author       User
 // @match        https://nte.stardb.gg/*
@@ -242,7 +242,7 @@
 "Whisper Spawn":"低语种",
 "Wind Spawn":"风洞种",
 "Lv1 Safes":"1级保险箱",
-"Lv2 Safes":"2级保险箱",
+"Lv2 Safes":"2级保险箱"
 
     };
     // 2. 局部包含匹配：原文里只要包含key，就把key片段替换成value
