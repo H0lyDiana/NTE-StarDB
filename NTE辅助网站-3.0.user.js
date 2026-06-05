@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         NTE辅助网站
+// @name         NTE StarDB Localization
 // @namespace    http://tampermonkey.net/
 // @version      3.0
 // @description  NTE辅助网站汉化
