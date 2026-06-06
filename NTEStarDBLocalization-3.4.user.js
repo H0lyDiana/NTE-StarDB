@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         NTE StarDB Localization
 // @namespace    http://tampermonkey.net/
-// @version      3.3
+// @version      3.4
 // @description  NTE辅助网站汉化
 // @author       User
 // @match        https://nte.stardb.gg/*
@@ -53,7 +53,7 @@
 "Character Pixels cap":"本性像素上限",
 "City Stamina":"都市活力",
 "City Stamina cap":"都市活力上限",
-"Battle Pass Daily Tasks":"猎人补给(通行证)每日任务",
+"Battle Pass Daily Tasks":"环期赏令每日任务",
 "Daily Activity":"每日活跃度",
 "Illegal Activities / City Incidents":"城市违规行径",
 "Detention Facility Item Pickups":"拘留所物资拾取",
@@ -92,7 +92,7 @@
 "Overworld enemies":"大世界敌人",
 "[Fish Market] Daily Refresh":"[渔获市场]每日收购",
 "Taygedo's Shed":"塔吉多的仓库",
-"Battle Pass Weekly XP Cap":"猎人补给(通行证)历练值每周上限",
+"Battle Pass Weekly XP Cap":"环期赏令历练值周上限",
 "Edgar Bond 10 - Weekly Collectible":"埃德嘉羁遇10级-读后感",
 "[Anomaly Furniture] Blind Mammon - Realm of Greed Fons":"[异象家具]玛门-贪世宝库方斯",
 "[Anomaly Furniture] Old Mailbox - Special City Commission":"[异象家具]老旧邮箱-特殊同城派送",
@@ -112,7 +112,7 @@
 "[Fishing Tackle Shop] 100x Beetle Coin":"[渔具商店]100次甲壳币兑换",
 "Beyond the Rails":"轨外之境",
 "Hunter Exchange":"猎人交易所",
-"Battle Pass":"猎人补给(通行证)",
+"Battle Pass":"环期赏令",
 "Online Mode Racing: Ace Driver":"车辆赛事在线对战：S1赛季",
 "Add Task":"添加计划",
 "Save":"保存",
@@ -261,7 +261,12 @@
 "Post":"发布",
 "Anomaly Hunt":"异象追猎",
 "Anomaly Commission":"异象委托",
-"Gift from \"21\"":"21的赠礼"
+"Gift from \"21\"":"21的赠礼",
+"Ebisu Auction House":"惠比寿拍卖行",
+"Security Office":"治安所",
+"Hethereau Municipal Hospital":"海特洛市立医院",
+"Train Station":"火车站",
+"Sterry Express":"斯特利速递"
 
     };
     // 2. 局部包含匹配：原文里只要包含key，就把key片段替换成value
