@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         NTE StarDB Localization
 // @namespace    http://tampermonkey.net/
-// @version      3.2
+// @version      3.3
 // @description  NTE辅助网站汉化
 // @author       User
 // @match        https://nte.stardb.gg/*
@@ -258,8 +258,10 @@
 "Midas Arc Workshop":"迈达斯弧盘工房",
 "No comments yet.":"暂无评论。",
 "Screenshots":"截图",
-"No screenshots attached. Submit one in our ":"未附截图，提交请前往",
-"Post":"发布"
+"Post":"发布",
+"Anomaly Hunt":"异象追猎",
+"Anomaly Commission":"异象委托",
+"Gift from \"21\"":"21的赠礼"
 
     };
     // 2. 局部包含匹配：原文里只要包含key，就把key片段替换成value
