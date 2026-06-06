@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         NTE StarDB Localization
 // @namespace    http://tampermonkey.net/
-// @version      3.1
+// @version      3.2
 // @description  NTE辅助网站汉化
 // @author       User
 // @match        https://nte.stardb.gg/*
@@ -242,7 +242,24 @@
 "Whisper Spawn":"低语种",
 "Wind Spawn":"风洞种",
 "Lv1 Safes":"1级保险箱",
-"Lv2 Safes":"2级保险箱"
+"Lv2 Safes":"2级保险箱",
+"Bagel - Praise Jam":"呗果-过奖果酱",
+"Morphix":"墨菲克斯",
+"Bubble Can Factory":"泡影罐头工厂",
+"Houdinii's Magic Stage":"胡迪尼的魔术舞台",
+"Houdinii's Schemes":"胡迪尼的诡计舞台",
+"Rabbit Hole":"兔子洞",
+"The Never-ending Arachne":"永不谢幕的阿拉克捏",
+"Easter Eggs":"彩蛋",
+"Side Quests":"支线",
+"Pink Paws Bank HQ":"粉爪总行",
+"Gold Apple Collection Hall":"金苹果藏馆",
+"Fishing Spot":"钓点",
+"Midas Arc Workshop":"迈达斯弧盘工房",
+"No comments yet.":"暂无评论。",
+"Screenshots":"截图",
+"No screenshots attached. Submit one in our ":"未附截图，提交请前往",
+"Post":"发布"
 
     };
     // 2. 局部包含匹配：原文里只要包含key，就把key片段替换成value
