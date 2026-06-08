@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         NTE StarDB Localization
 // @namespace    http://tampermonkey.net/
-// @version      3.5
+// @version      3.6
 // @description  NTE辅助网站汉化
 // @author       User
 // @match        https://nte.stardb.gg/*
@@ -27,7 +27,7 @@
 "SEA (5 AM GMT+8)":"东南亚服(早晨5点 GMT+8)",
 "Europe (5 AM GMT+2)":"欧服(早晨5点 GMT+2)",
 "America (5 AM GMT-4)":"美服(早晨5点 GMT-4)",
-
+"China (5 AM GMT+8)":"国服(早晨5点 GMT+8)",
 "Legacy Browser Progress":"浏览器旧进度",
 "Merge older progress from this browser into your account\n\t\t\t\t\twithout replacing account settings.":"将此浏览器中的旧进度合并到您的帐户中，但不替换账户设置。",
 "Clear legacy browser progress after a successful merge":"合并成功后清除浏览器旧进度",
@@ -267,9 +267,6 @@
 "Hethereau Municipal Hospital":"海特洛市立医院",
 "Train Station":"火车站",
 "Sterry Express":"斯特利速递",
-" 1 Week":" 1周",
-" 1 Month":" 1月",
-"Search tasks":"搜索计划",
 "Bagel - Praise Jam Interactions":"呗果-过奖果酱互动",
 "View 5 posts, Like 3 posts, Comment 3 posts for the flat 2,000 🍩Praise Jam daily bonus.\nSort by latest, then look up \"STARDB\", and like (+30 score) and star (+60 score) as many posts as you can. After you've done to that every post, you can additionally comment (+60 score) on different posts, though comments have a 10s cooldown.":"每日浏览5篇帖子，点赞3篇帖子，评论3次。可获得2000🍩过奖果酱。",
 "Bagel - 5 Daily Posts":"呗果-每日5帖",
@@ -287,7 +284,13 @@
 "Special Location":"特殊点位",
 "Miscellaneous":"杂项",
 "Serenetti Manor":"塞润尼缇庄园",
-"Pink Paws Bank Branch":"粉爪支行"
+"Pink Paws Bank Branch":"粉爪支行",
+"24h Tasks":"24小时计划表",
+"1 Week Tasks":"1周计划表",
+"1 Month Tasks":"1月计划表",
+"Tomato Devil":"番茄酱恶魔",
+"Hethereau - Full Throttle":"海特洛-全速前进！车队",
+"Miguel District - Meridian":"米格尔区-子午线车队"
 
     };
     // 2. 局部包含匹配：原文里只要包含key，就把key片段替换成value
@@ -324,6 +327,8 @@
         res = res.replace(/(\d+)d/g,"$1天");
         res = res.replace(/(\d+)h/g,"$1小时");
         res = res.replace(/(\d+)m/g,"$1分钟");
+        res = res.replace(/(\d+)\s+Month(s)?/gi, "$1月");
+        res = res.replace(/(\d+)\s+Week(s)?/gi, "$1周");
         return res;
     }
 
