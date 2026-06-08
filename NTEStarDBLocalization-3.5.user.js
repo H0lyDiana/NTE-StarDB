@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         NTE StarDB Localization
 // @namespace    http://tampermonkey.net/
-// @version      3.4
+// @version      3.5
 // @description  NTE辅助网站汉化
 // @author       User
 // @match        https://nte.stardb.gg/*
@@ -24,9 +24,10 @@
 "Global Preferences":"全局偏好",
 "Choose the default region used for reset-based features\n\t\t\t\t\tacross the site.":"更改网站计划表刷新时间所基于的游戏区服。",
 "Reset Region":"区服设置",
-"Asia (5 AM GMT+8)":"亚服(早晨5点 GMT+8)",
+"SEA (5 AM GMT+8)":"东南亚服(早晨5点 GMT+8)",
 "Europe (5 AM GMT+2)":"欧服(早晨5点 GMT+2)",
 "America (5 AM GMT-4)":"美服(早晨5点 GMT-4)",
+
 "Legacy Browser Progress":"浏览器旧进度",
 "Merge older progress from this browser into your account\n\t\t\t\t\twithout replacing account settings.":"将此浏览器中的旧进度合并到您的帐户中，但不替换账户设置。",
 "Clear legacy browser progress after a successful merge":"合并成功后清除浏览器旧进度",
@@ -59,7 +60,7 @@
 "Detention Facility Item Pickups":"拘留所物资拾取",
 "Nacupeda's Pool":"纳库佩达之池",
 "Grants a random amount of [Mhm! Coin] via first dialogue option.\nUse 100x [Mhm! Coin] to buy [Your Happiness is Priceless] S-Rank Arc in Mall -> Arc Shop -> Arc Exchange.":"选择第一个选项获得随机数量的[嗯！硬币]。|使用100个[嗯！硬币]可以购买[千金难买你开心]S级弧盘，在商城->弧盘商店->弧盘兑换。",
-"Witch's House Fortune":"魔女之家",
+"Witch's House Fortune":"魔女之家占卜",
 "[Bond] 10x Affection Gift":"[羁遇]10次赠送礼物",
 "[Bond] 3x Memory Theater Encounter":"[羁遇]3次回忆映厅遭遇",
 "50 Affection":"50点好感度",
@@ -243,7 +244,6 @@
 "Wind Spawn":"风洞种",
 "Lv1 Safes":"1级保险箱",
 "Lv2 Safes":"2级保险箱",
-"Bagel - Praise Jam":"呗果-过奖果酱",
 "Morphix":"墨菲克斯",
 "Bubble Can Factory":"泡影罐头工厂",
 "Houdinii's Magic Stage":"胡迪尼的魔术舞台",
@@ -266,7 +266,28 @@
 "Security Office":"治安所",
 "Hethereau Municipal Hospital":"海特洛市立医院",
 "Train Station":"火车站",
-"Sterry Express":"斯特利速递"
+"Sterry Express":"斯特利速递",
+" 1 Week":" 1周",
+" 1 Month":" 1月",
+"Search tasks":"搜索计划",
+"Bagel - Praise Jam Interactions":"呗果-过奖果酱互动",
+"View 5 posts, Like 3 posts, Comment 3 posts for the flat 2,000 🍩Praise Jam daily bonus.\nSort by latest, then look up \"STARDB\", and like (+30 score) and star (+60 score) as many posts as you can. After you've done to that every post, you can additionally comment (+60 score) on different posts, though comments have a 10s cooldown.":"每日浏览5篇帖子，点赞3篇帖子，评论3次。可获得2000🍩过奖果酱。",
+"Bagel - 5 Daily Posts":"呗果-每日5帖",
+"Put  \"STARDB\" somewhere in the title of your 5 daily posts":"虽然发帖不会有奖励，但是海特洛市民会给你每帖至少点10赞",
+"The Cafe by Origen":"一咖舍",
+"Leon Estate Group":"莱昂置业",
+"Novus":"新越",
+"Rampage Players":"暴走玩家",
+"The Witch's House":"魔女之家",
+"Little Sparrow":"小小麻雀",
+"Xtreme99!":"极限99！",
+"City Shops":"城市商店",
+"Recommended Locations":"推荐点位",
+"Random Key Pickup":"钥匙随机点位",
+"Special Location":"特殊点位",
+"Miscellaneous":"杂项",
+"Serenetti Manor":"塞润尼缇庄园",
+"Pink Paws Bank Branch":"粉爪支行"
 
     };
     // 2. 局部包含匹配：原文里只要包含key，就把key片段替换成value
