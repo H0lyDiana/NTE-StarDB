@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         NTE StarDB Localization
 // @namespace    http://tampermonkey.net/
-// @version      3.6
+// @version      3.7
 // @description  NTE辅助网站汉化
 // @author       User
 // @match        https://nte.stardb.gg/*
@@ -24,7 +24,7 @@
 "Global Preferences":"全局偏好",
 "Choose the default region used for reset-based features\n\t\t\t\t\tacross the site.":"更改网站计划表刷新时间所基于的游戏区服。",
 "Reset Region":"区服设置",
-"SEA (5 AM GMT+8)":"东南亚服(早晨5点 GMT+8)",
+"Asia/SEA (5 AM GMT+8)":"亚服/东南亚服(早晨5点 GMT+8)",
 "Europe (5 AM GMT+2)":"欧服(早晨5点 GMT+2)",
 "America (5 AM GMT-4)":"美服(早晨5点 GMT-4)",
 "China (5 AM GMT+8)":"国服(早晨5点 GMT+8)",
@@ -290,7 +290,11 @@
 "1 Month Tasks":"1月计划表",
 "Tomato Devil":"番茄酱恶魔",
 "Hethereau - Full Throttle":"海特洛-全速前进！车队",
-"Miguel District - Meridian":"米格尔区-子午线车队"
+"Miguel District - Meridian":"米格尔区-子午线车队",
+"Hunter Guides":"特级猎人攻略",
+"Abandoned Furniture":"遗弃的家具",
+"Kokoro Rider Figurine Boxes":"心猎铁骑手办",
+"Coupon Vouchers":"优惠券"
 
     };
     // 2. 局部包含匹配：原文里只要包含key，就把key片段替换成value
