@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         NTE StarDB Localization
 // @namespace    http://tampermonkey.net/
-// @version      3.7
+// @version      3.8
 // @description  NTE辅助网站汉化
 // @author       User
 // @match        https://nte.stardb.gg/*
@@ -294,7 +294,22 @@
 "Hunter Guides":"特级猎人攻略",
 "Abandoned Furniture":"遗弃的家具",
 "Kokoro Rider Figurine Boxes":"心猎铁骑手办",
-"Coupon Vouchers":"优惠券"
+"Coupon Vouchers":"优惠券",
+"Everdriving Mystery Box":"失速狂飙盲盒",
+"This Mystery Box may contain the limited vehicle Porsche 918 Spyder, Esper Zero's limited outfit Perfect Partners, growth materials, and more.":"包含限定载具Porsche 918 Spyder、角色零的时装最佳拍档、养成材料等。",
+"Circle Gift":"环期赠礼",
+"Underground Circuit":"黑暗赛车界",
+"What's Baking":"热帖烘焙中",
+"Sunward Travelogue":"向阳游记",
+"The Long Dream":"十三日梦醒",
+"Fons Rush":"淘方斯记",
+"[Character] Fading Reverie - Lacrimosa":"[角色]久梦初醒时-安魂曲",
+"Lacrimosa\nEdgar\nMint\nAdler":"安魂曲 埃德嘉 薄荷 阿德勒",
+"[Arc] Nocturne Special":"[弧盘]夜曲特刊",
+"The Last Rose (Lacrimosa)":"最后一朵玫瑰(安魂曲)",
+"[Trial] Market Opening Rehearsal":"[试玩]开市预演",
+"[Skin] Daydream Perks":"[装扮]白日梦礼遇",
+"[50] Tomato Duo - Glider\n[120] Tomato Cruise - Livery\n[200] Gilded Rhapsody - Outfit":"[50]好柿成双-滑翔翼 [120]番茄酱巡航-涂装 [200]鎏金交响诗-时装"
 
     };
     // 2. 局部包含匹配：原文里只要包含key，就把key片段替换成value
