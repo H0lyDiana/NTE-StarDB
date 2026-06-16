@@ -315,8 +315,8 @@
     // 2. 局部包含匹配：原文里只要包含key，就把key片段替换成value
     const partMatchDict = {
         "Hidden": "已隐藏",
-        "Full ": "全部恢复时间 ",
-        "Next ": "下次恢复时间 ",
+        "Full in ": "全部恢复时间 ",
+        "Next in ": "下次恢复时间 ",
         "Reset ": "重置时间 "
     };
 
